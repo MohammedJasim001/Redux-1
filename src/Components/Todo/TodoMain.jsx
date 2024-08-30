@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, deleteTodo, inputTodo } from "./TodoSlice";
+import { addEdit, addTodo, deleteTodo, editTodo, inputTodo } from "./TodoSlice";
 
 const TodoMain = () => {
  
-  const {todos,text} = useSelector((state) => state.todo);
+  const {todos,text,edit} = useSelector((state) => state.todo);
   const dispatch = useDispatch();
 
   return (
@@ -16,9 +16,13 @@ const TodoMain = () => {
           className="mt-10 w-[300px] h-10 border border-blue-950 p-3 rounded-md"
           type="text"
         />
-        <button onClick={() => dispatch(addTodo())}
+        {edit===Number(edit)?<button onClick={() => dispatch(addEdit())}
             className="bg-red-600 p-2 w-20 rounded-md ml-3"
-            >Add</button>
+            >Edit
+          </button>:<button onClick={() => dispatch(addTodo())}
+            className="bg-red-600 p-2 w-20 rounded-md ml-3"
+            >Add
+          </button>}
       </div>
       <div>
         {todos.map((event,i)=>(
@@ -31,6 +35,10 @@ const TodoMain = () => {
                 className="bg-red-600 p-2 w-20 rounded-md ml-3"
                     onClick={()=>dispatch(deleteTodo())}
                   >Delete</button>
+                  <button 
+                className="bg-red-600 p-2 w-20 rounded-md ml-3"
+                    onClick={()=>dispatch(editTodo(i))}
+                  >Edit</button>
             </div>
         ))}
       </div>
