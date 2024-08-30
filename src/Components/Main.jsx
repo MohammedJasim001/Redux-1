@@ -14,10 +14,11 @@ const Main = () => {
     //   console.log(value);
     
     //   const dispatch = useDispatch();
-    const {value} = useSelector((state) => state.color);
+    
+    const value = useSelector((state)=>state.value)
     
       return (
-        <div style={{background:value ? "yellow":"green"}}   className='h-[100vh] flex justify-center items-center'>
+        <div style={{background:value%3===0 ? "yellow":"green"}}   className='h-[100vh] flex justify-center items-center'>
           {/* <div className="flex flex-col">
             <button className='bg-blue-500 p-2 rounded-md'
               onClick={() => {

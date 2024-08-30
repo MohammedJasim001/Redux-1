@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const ColorSlice = createSlice({
   name: "color",
   initialState: {
-    value: true,
+    color: true,
   },
   reducers: {
     chage:(state)=>{
-        state.value = !state.value
+        state.color = !state.color
         
         
     }
