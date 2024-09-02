@@ -1,5 +1,6 @@
 
 import "./App.css";
+import AsynkThunkMain from "./Components/Folders/AsynkThunkMain";
 
 
 import Main from "./Components/Main";
@@ -11,6 +12,7 @@ function App() {
       <div className="App">
         <Main/>
         <TodoMain/>
+        <AsynkThunkMain/>
       </div>
     
   );

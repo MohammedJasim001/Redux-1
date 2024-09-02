@@ -3,6 +3,7 @@ import React from 'react'
 import Color from './Folders/Color';
 import Count from './Folders/Count';
 import { useSelector } from 'react-redux';
+import AsynkThunkMain from './Folders/AsynkThunkMain';
 
 const Main = () => {
     // const value = useSelector((state) => {
@@ -66,6 +67,7 @@ const Main = () => {
 
             <Color/>
             <Count/>
+         
         </div>
       );
     };
